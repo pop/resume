@@ -1,0 +1,217 @@
+% Emily S. Dunham -- Resume
+% Contents Copyright (C) 2014, Emily Dunham
+
+% LaTeX code for rendering the resume is distributed under the MIT license.
+% See LICENSE.txt. It means you can use the code for whatever you want,
+% including your own resume, but I'm not liable if it catches your computer on
+% fire.
+
+% Template originally developed by Emily Dunham
+% https://github.com/edunham/resume/blob/master/resume.tex
+
+\documentclass[11pt]{article}
+\topmargin=0.0in
+\textwidth=6.5in
+
+\topmargin 0pt
+\advance \topmargin by -\headheight
+\advance \topmargin by -\headsep
+
+\setlength{\hoffset}{-0.25in}
+
+\oddsidemargin 0pt
+\evensidemargin \oddsidemargin
+\marginparwidth 0.5in
+
+
+\headheight=0pt
+\headsep=0pt
+\textheight=10.5in
+
+\pagenumbering{gobble}
+\setlength{\parindent}{0pt}
+
+\usepackage[normalem]{ulem} % for the underlines
+\usepackage[compact]{titlesec}
+        
+\newcommand{\heading}[1]{
+    \section*{\uline{\hfill #1}}
+}
+
+\newcommand{\squish}{
+    \setlength{\itemsep}{0.5pt}
+    % tweak parskip value to adjust size on page
+    \setlength{\parskip}{0pt}
+    \setlength{\parsep}{0.5pt}
+}
+
+% naming it 'date' would conflict with builtins
+\newcommand{\when}[1]{
+    \hfill \texttt{#1}
+}
+
+% place, optional title, date
+\newcommand{\experience}[3]{
+    \ifx&#2&
+        \item[{#1}]
+    \else
+        \item[{#1}, \emph{#2}]
+    \fi
+    \when{#3}
+}
+
+\newcommand{\contact}[4]{
+    \centerline{
+        \large       
+        \texttt{#1}
+        $\bullet$
+        \texttt{#2}
+        $\bullet$
+        \texttt{#3}
+    }
+    \centerline{
+        \emph{#4}
+    }
+}
+
+\newcommand{\skill}[2]{
+    \textbf{#1} \hfill #2
+}
+
+% http://www.parashift.com/c++-faq-lite/latex-macros.html
+\newcommand{\CPP}{
+    C\hspace{-.05em}\raisebox{.4ex}{\tiny\bf +}\hspace{-.10em}\raisebox{.4ex}{\tiny\bf +}
+}
+
+\begin{document}
+
+
+
+\centerline{{\Huge \bf Elijah Caine McDade Voigt}}
+\bigskip
+
+\contact{elijahcainemv@gmail.com}
+        {elijahcaine.me}
+        {github.com/ElijahCaine}
+        {Corvallis, Oregon}
+
+\heading{Skills}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\skill{Development}{Python, Ruby, HTML/CSS, Flask, Django, C/\CPP}
+
+\skill{Systems Administration}{Chef, Apache, SSH,
+Atlas (Vagrant + Packer + Terraform), Linux}
+
+\skill{Collaboration}{IRC, Git \& GitHub, Documentation (.mkd, .rst, Sphinx)} 
+
+\skill{Leadership}{Teaching, public speaking, event planning, curriculum
+design}
+
+
+
+\heading{Employment}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{description}
+\squish
+
+\experience{OSU Open Source Lab}
+           {Student Software Developer}
+           {05/2014 - Present}
+
+    Developed Chef Cookbooks for three Open Source Lab projects.
+
+    Contributed documentation for five internal projects.
+    
+    Overhauled internal work-flow documentation and set documentation standards.
+
+    Maintain two Python applications: the Protien Geometry Database and the
+    Oregon Virtual School District Central.
+
+\experience{Hashi Scholars Participant}
+           {Atlas Infrastructure Tester}
+           {03/2015 - 06/2015}
+
+    Deployed, and documented the deployment of, simple applications using the
+    HashiCorp Atlas stack.
+
+\experience{elijahcaine.me}
+           {Site Administrator}
+           {05/2014 - Present}
+
+    Serve content using Apache and deploy applications using Docker.
+
+    Host three applications and a git service to mirror repositories.
+
+
+\end{description}
+
+
+
+\heading{Leadership}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{description}
+\squish
+
+\experience{OSU DevOps Bootcamp}
+           {Curriculum Leader}
+           {2014 - 2015}
+
+    Led lessons on web-development and operations including Linux basics,
+    web-frameworks, configuration management, and testing.
+
+    Improved upon previously developed and learning outcomes.
+
+    See the curriculum at devopsbootcamp.osuosl.org
+    
+\experience{OSU Linux Users Group}
+           {President}
+           {2014 - Present}
+
+    Organized weekly meetings, mentored students in FOSS involvement
+
+\end{description}
+
+
+
+\heading{Academics}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{description}
+\squish
+
+\experience{Oregon State University}
+           {Junior}
+           {2013-Present}
+
+    Computer Science coursework including C/C++ programming, web development,
+    and assembly programming.
+
+\end{description}
+
+
+
+\heading{Speaking}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{description}
+\squish
+
+\experience{Beaver BarCamp}
+           {}
+           {04/2015}
+
+    ``HuRandom: An adventure in finding meaning (and trolls) in your data.''
+
+\experience{Southern California Linux Expo (SCALE)}
+           {}
+           {02/2015}
+
+    ``Introduction to Blender3D''
+
+\experience{Seattle GNU/Linux Conference}
+           {}
+           {10/2014}
+
+    ``Introduction to Blender3D''
+
+
+\end{description}
+\end{document}
