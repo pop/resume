@@ -1,5 +1,5 @@
-% Emily S. Dunham -- Resume
-% Contents Copyright (C) 2014, Emily Dunham
+% Elijah Caine McDade Voigt -- Resume
+% Contents Copyright (C) 2015 -- Elijah M.C. Voigt
 
 % LaTeX code for rendering the resume is distributed under the MIT license.
 % See LICENSE.txt. It means you can use the code for whatever you want,
@@ -41,7 +41,7 @@
 \newcommand{\squish}{
     \setlength{\itemsep}{0.5pt}
     % tweak parskip value to adjust size on page
-    \setlength{\parskip}{0pt}
+    \setlength{\parskip}{2.5pt}
     \setlength{\parsep}{0.5pt}
 }
 
@@ -60,7 +60,7 @@
     \when{#3}
 }
 
-\newcommand{\contact}[4]{
+\newcommand{\contact}[5]{
     \centerline{
         \large       
         \texttt{#1}
@@ -68,9 +68,11 @@
         \texttt{#2}
         $\bullet$
         \texttt{#3}
+        $\bullet$
+        \texttt{#4}
     }
     \centerline{
-        \emph{#4}
+        \emph{#5}
     }
 }
 
@@ -93,19 +95,19 @@
 \contact{elijahcainemv@gmail.com}
         {elijahcaine.me}
         {github.com/ElijahCaine}
+        {971 533 5545}
         {Corvallis, Oregon}
 
 \heading{Skills}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\skill{Development}{Python, Ruby, HTML/CSS, Flask, Django, C/\CPP}
+\skill{Development}{Python, NodeJS, Ruby, HTML/CSS, Flask, Django, C/\CPP}
 
-\skill{Systems Administration}{Chef, Apache, SSH,
-Atlas (Vagrant + Packer + Terraform), Linux}
+\skill{System Administration}{Chef, Apache, SSH, Hashicorp's Atlas, Linux (Debian \& CentOS)}
 
 \skill{Collaboration}{IRC, Git \& GitHub, Documentation (.mkd, .rst, Sphinx)} 
 
-\skill{Leadership}{Teaching, public speaking, event planning, curriculum
-design}
+\skill{Leadership}{Public Speaking, Event Planning, Curriculum Design and
+Teaching}
 
 
 
@@ -118,29 +120,33 @@ design}
            {Student Software Developer}
            {05/2014 - Present}
 
+    Contribute to the internally developed time-tracking API "TimeSync".
+
     Developed Chef Cookbooks for three Open Source Lab projects.
 
     Contributed documentation for five internal projects.
-    
-    Overhauled internal work-flow documentation and set documentation standards.
 
-    Maintain two Python applications: the Protien Geometry Database and the
-    Oregon Virtual School District Central.
+    Maintained two Python applications: the Protien Geometry Database and the
+    Oregon Virtual School District Central. Developed plugins, pruned old code,
+    and configured deployment.
+
+    Worked with others on large and small projects and helped peers with code
+    review and design.
 
 \experience{Hashi Scholars Participant}
            {Atlas Infrastructure Tester}
            {03/2015 - 06/2015}
 
-    Deployed, and documented the deployment of, simple applications using the
-    HashiCorp Atlas stack.
+    Established and documented deployment best practices for the HashiCorp
+    Atlas stack.
 
 \experience{elijahcaine.me}
            {Site Administrator}
            {05/2014 - Present}
 
-    Serve content using Apache and deploy applications using Docker.
+    Served content using Apache and deployed applications using Docker.
 
-    Host three applications and a git service to mirror repositories.
+    Host three applications and a Git service to mirror repositories.
 
 
 \end{description}
@@ -156,18 +162,23 @@ design}
            {Curriculum Leader}
            {2014 - 2015}
 
-    Led lessons on web-development and operations including Linux basics,
-    web-frameworks, configuration management, and testing.
+    Delivered lessons on Linux basics, web-frameworks, configuration
+    management, and testing.
 
-    Improved upon previously developed and learning outcomes.
+    Improved upon previously developed lessons and learning outcomes.
 
-    See the curriculum at devopsbootcamp.osuosl.org
+    Helped teach over 100 students at an annual 'DevOps DayCamp' kickoff-event
+
+    Regularly taught ~5-15 students per week in class lessons and personal
+    mentoring.
+
+    See the curriculum at devopsbootcamp.osuosl.org.
     
 \experience{OSU Linux Users Group}
            {President}
            {2014 - Present}
 
-    Organized weekly meetings, mentored students in FOSS involvement
+    Organized weekly meetings, mentored students in FOSS involvement.
 
 \end{description}
 
@@ -182,8 +193,9 @@ design}
            {Junior}
            {2013-Present}
 
-    Computer Science coursework including C/C++ programming, web development,
-    and assembly programming.
+    Computer Science coursework including C/C++ programming and web development.
+    
+    Learned software engineering concepts and code collaboration.
 
 \end{description}
 
@@ -194,11 +206,11 @@ design}
 \begin{description}
 \squish
 
-\experience{Beaver BarCamp}
+\experience{Write the Docs: Europe (Prague, CZ)}
            {}
-           {04/2015}
+           {08/2015}
 
-    ``HuRandom: An adventure in finding meaning (and trolls) in your data.''
+    ``How to Write an Email``
 
 \experience{Southern California Linux Expo (SCALE)}
            {}
