@@ -1,0 +1,85 @@
+\documentclass[letterpaper,10pt]{article}
+
+%-----------------------------------------------------------
+%Margin setup
+
+\setlength{\voffset}{0.1in}
+\setlength{\paperwidth}{8.5in}
+\setlength{\paperheight}{11in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\setlength{\textheight}{11in}
+\setlength{\textheight}{9.5in}
+\setlength{\topmargin}{-0.15in}
+\setlength{\textwidth}{7in}
+\setlength{\topskip}{0in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\evensidemargin}{-0.25in}
+%-----------------------------------------------------------
+%\usepackage{fullpage}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{shading}
+\usepackage{color}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+\usepackage[margin=.5in]{geometry}
+
+%\textheight=9.0in
+\pagestyle{empty}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\setlist{nosep}
+
+\def \ifempty#1{\def\temp{#1} \ifx\temp\empty }
+
+% Skills
+\newcommand{\skill}[1]{
+  \begin{flushleft}
+    \textbf{
+      \texttt{
+        \LARGE{\color{Emerald} #1}
+      }
+    }
+  \end{flushleft}
+  \vspace{-5pt}
+}
+
+% Subskill
+\newcommand{\subskill}[4]{
+  \vspace{5pt}
+  \begin{tabular}[t]{l@{}}
+    \ifempty{#2}
+    \textbf{#1}
+    \else
+    \textbf{#1} (#2)
+    \fi
+  \end{tabular}
+  \hfill
+  \begin{tabular}[t]{r@{}}
+      \textbf{#3} #4
+  \end{tabular}
+}
+
+% Overview (like subskill)
+
+\newcommand{\overview}[2]{
+  \vspace{3pt}
+  \begin{tabular}[t]{l@{}}
+    \textbf{#1}:
+  \end{tabular}
+  \hfill
+  \begin{tabular}[t]{r@{}}
+      #2
+  \end{tabular}\\
+}
+
+% Custom item command
+\newcommand{\skitem}[2]{
+  \item[--] \textbf{#1}. {#2}
+}

@@ -1,229 +1,103 @@
-% Elijah Caine McDade Voigt -- Resume
-% Contents Copyright (C) 2015 -- Elijah M.C. Voigt
+%
+% Author: Elijah C. Voigt
+% Filename: resume.tex
+% Make: pdflatex resume.tex # produces resume.pdf
+% Description: A resume!
+% This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/ or send a letter to Creative Commons, 171 Second Street, Suite 300, San Francisco, California, 94105, USA.
+%
 
-% LaTeX code for rendering the resume is distributed under the MIT license.
-% See LICENSE.txt. It means you can use the code for whatever you want,
-% including your own resume, but I'm not liable if it catches your computer on
-% fire.
-
-% Template originally developed by Emily Dunham
-% https://github.com/edunham/resume/blob/master/resume.tex
-
-\documentclass[11pt]{article}
-\topmargin=0.0in
-\textwidth=6.5in
-
-\topmargin 0pt
-\advance \topmargin by -\headheight
-\advance \topmargin by -\headsep
-
-\setlength{\hoffset}{-0.25in}
-
-\oddsidemargin 0pt
-\evensidemargin \oddsidemargin
-\marginparwidth 0.5in
-
-
-\headheight=0pt
-\headsep=0pt
-\textheight=10.5in
-
-\pagenumbering{gobble}
-\setlength{\parindent}{0pt}
-
-\usepackage[normalem]{ulem} % for the underlines
-\usepackage[compact]{titlesec}
-        
-\newcommand{\heading}[1]{
-    \section*{\uline{\hfill #1}}
-}
-
-\newcommand{\squish}{
-    \setlength{\itemsep}{0.5pt}
-    % tweak parskip value to adjust size on page
-    \setlength{\parskip}{2.5pt}
-    \setlength{\parsep}{0.5pt}
-}
-
-% naming it 'date' would conflict with builtins
-\newcommand{\when}[1]{
-    \hfill \texttt{#1}
-}
-
-% place, optional title, date
-\newcommand{\experience}[3]{
-    \ifx&#2&
-        \item[{#1}]
-    \else
-        \item[{#1}, \emph{#2}]
-    \fi
-    \when{#3}
-}
-
-\newcommand{\contact}[5]{
-    \centerline{
-        \large       
-        \texttt{#1}
-        $\bullet$
-        \texttt{#2}
-        $\bullet$
-        \texttt{#3}
-        $\bullet$
-        \texttt{#4}
-    }
-    \centerline{
-        \emph{#5}
-    }
-}
-
-\newcommand{\skill}[2]{
-    \textbf{#1} \hfill #2
-}
-
-% http://www.parashift.com/c++-faq-lite/latex-macros.html
-\newcommand{\CPP}{
-    C\hspace{-.05em}\raisebox{.4ex}{\tiny\bf +}\hspace{-.10em}\raisebox{.4ex}{\tiny\bf +}
-}
+\include{header}
 
 \begin{document}
+%
+% Name, Email, Location
+%
+\begin{tabular}[t]{l@{}}
+  \textbf{\Huge{Elijah Caine M. Voigt}}
+\end{tabular}
+\hfill
+\begin{tabular}[t]{r@{}}
+    \normalsize{elijah.caine.mv@gmail.com} \\
+    \normalsize{http://elijahcaine.me} \\
+    % \normalsize{Pacific Northwest, USA} \\
+    \normalsize{(971) 533 5545}
+\end{tabular}
 
-
-
-\centerline{{\Huge \bf Elijah Caine McDade Voigt}}
-\bigskip
-
-\contact{elijahcainemv@gmail.com}
-        {elijahcaine.me}
-        {github.com/ElijahCaine}
-        {971 533 5545}
-        {Corvallis, Oregon}
-
-\heading{Skills}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\skill{Development}{Python, NodeJS, Ruby, HTML/CSS, Flask, Django, C/\CPP}
-
-\skill{System Administration}{Chef, Apache, SSH, Hashicorp's Atlas, Linux (Debian \& CentOS)}
-
-\skill{Collaboration}{IRC, Git \& GitHub, Documentation (.mkd, .rst, Sphinx)} 
-
-\skill{Leadership}{Public Speaking, Event Planning, Curriculum Design and
-Teaching}
-
-
-
-\heading{Employment}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Overview
+\skill{\$ whoami}
 
 \begin{description}
-\squish
-
-\experience{OSU Open Source Lab}
-           {Student Software Developer}
-           {05/2014 - Present}
-
-    Contribute to the internally developed time-tracking API "TimeSync".
-
-    Developed Chef Cookbooks for three Open Source Lab projects.
-
-    Contributed documentation for five internal projects.
-
-    Maintained two Python applications: the Protien Geometry Database and the
-    Oregon Virtual School District Central. Developed plugins, pruned old code,
-    and configured deployment.
-
-    Worked with others on large and small projects and helped peers with code
-    review and design.
-
-\experience{Hashi Scholars Participant}
-           {Atlas Infrastructure Tester}
-           {03/2015 - 06/2015}
-
-    Established and documented deployment best practices for the HashiCorp
-    Atlas stack.
-
-\experience{elijahcaine.me}
-           {Site Administrator}
-           {05/2014 - Present}
-
-    Served content using Apache and deployed applications using Docker.
-
-    Host three applications and a Git service to mirror repositories.
-
-
+  \item My career interests are in creating and improving \textbf{Open Source solutions} to problems, \textbf{giving presentations} on interesting topics, and \textbf{automating} common tasks with efficiency in mind.
+  \item \overview{DevOps}{Kubernetes, Terraform, Chef, Ansible, Serverspec, Docker, AWS, DigitalOcean, Git \& GitHub}
+  \item \overview{Server-side}{Linux (CoreOS, Debian \& Ubuntu, RedHat \& Centos), Golang, Rust, Django, Ruby, NodeJS}
+  \item \overview{Open Source}{Publish general purpose tools, improve existing code-bases, document upstream projects.}
+  \item \overview{Leadership}{Linux Users Group president, taught DevOps BootCamp, SCaLE conference speaker.}
 \end{description}
 
+% Emplolyment history
+\skill{\$ jobs}
+\subskill{Nordstrom Tech}{Seattle, WA}{Unix/Linux DevOps Engineer}{06/2017 - 08/2017}{
+  \begin{itemize}
+    \skitem{DevOps}{Wrote Chef cookbooks for Prometheus and Alertmanager; contributed to upstream cookbooks.}
+    \skitem{Monitoring}{Evaluated monitoring solutions; migrated existing systems to Prometheus.}
+  \end{itemize}
+}
 
+\subskill{CoreOS}{San Francisco, CA/Remote}{Documentarian}{09/2016 - 05/2017}{
+  \begin{itemize}
+    \skitem{Community support}{Helped users in Slack and IRC, answering beginner to intermediate questions.}
+    \skitem{Open source docs}{Reviewed, tested, and contributed to public facing developer-focused docs.}
+  \end{itemize}
+}
 
-\heading{Leadership}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subskill{Oregon State University Open Source Lab}{Corvallis, OR}{Software Developer}{05/2014 - 09/2016}{
+  \begin{itemize}
+    \skitem{Efficiency}{Decreased time-to-deployment by integrating Docker into the testing/development workflow.}
+    \skitem{Mentorship}{Taught new developers fundamental ``real-world'' work skills like git and framework use.}
+    \skitem{Development}{Helped design and implement TimeSync, a time-tracking API for work logging.}
+  \end{itemize}
+}
 
-\begin{description}
-\squish
+% Education history
+\skill{\$ history}
+\subskill{BSCS - Oregon State University}{Corvallis, OR}{Student}{09/2013 - 12/2017}{
+  \begin{itemize}
+    \skitem{Major: Computer Science}{Coursework included Operating Systems I/II, Software Engineering I/II, Defense Against the Dark Arts, Programming Languages, Data Structures, Databases, Web Development, and three term a Capstone Project with the Apache Software Foundation.}
+    \skitem{Minor: Mathematics \& Security}{Coursework included Cryptography I,  Linear Algebra, Numerical Analysis, Computational Number Theory, and a self guided course on Advanced Topics of Cryptography.}
+  \end{itemize}
+}
 
-\experience{OSU DevOps Bootcamp}
-           {Curriculum Leader}
-           {2014 - 2015}
+\skill{\$ more}
+\subskill{OSU Linux Users Group}{}{President}{09/2014 - 09/2017}{
+  \begin{itemize}
+    \skitem{Scheduled speakers}{Coordinated industry professionals and Alumni from IBM, Nordstrom, CoreOS, Mozilla, and Google to speak, recruit, and eat pizza at weekly meetings.}
+    \skitem{Planned weekly meetings}{Recruited members to present on OpenSource/Libre Software topics.}
+    \skitem{URL}{\url{https://lug.oregonstate.edu}}
+  \end{itemize}
+}
 
-    Delivered lessons on Linux basics, web-frameworks, configuration
-    management, and testing.
+\subskill{DevOps BootCamp}{}{Educator}{09/2014 - 06/2015}{
+  \begin{itemize}
+    \skitem{Lectured}{Co-presented weekly topics for students and mentored those who struggled with the material.}
+    \skitem{Designed curriculum}{Improved curriculum based on student feedback to support online students.}
+    \skitem{URL}{\url{https://devopsbootcamp.osuosl.org}}
+  \end{itemize}
+}
 
-    Improved upon previously developed lessons and learning outcomes.
+\subskill{Write the Docs EU}{Prague, CZ}{Presenter}{08/2015}{
+  \begin{itemize}
+    \skitem{Presented}{Gave a 5-minute Lightning Talk in Portland, OR on gripes and alternatives to email. Was invited to expand this to a 30-minute talk to over 150 people in Prague.}
+    \skitem{URL}{\url{https://youtu.be/Ja-4t8Ufv6Y}}
+  \end{itemize}
+}
 
-    Helped teach over 100 students at an annual 'DevOps DayCamp' kickoff-event
+\subskill{elijahcaine.me}{}{Administrator}{05/2014 - Present}{
+  \begin{itemize}
+    \skitem{Management}{Configured, deployed, and managed applications on my personal website using Docker, LetsEncrypt, and Apache.}
+  \end{itemize}
+}
 
-    Regularly taught ~5-15 students per week in class lessons and personal
-    mentoring.
+\vspace{10pt}
+\centerline{1009 B899 9401 526E 33C5  BA8B 694C A211 7443 799C}
 
-    See the curriculum at devopsbootcamp.osuosl.org.
-    
-\experience{OSU Linux Users Group}
-           {President}
-           {2014 - Present}
-
-    Organized weekly meetings, mentored students in FOSS involvement.
-
-\end{description}
-
-
-
-\heading{Academics}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{description}
-\squish
-
-\experience{Oregon State University}
-           {Junior}
-           {2013-Present}
-
-    Computer Science coursework including C/C++ programming and web development.
-    
-    Learned software engineering concepts and code collaboration.
-
-\end{description}
-
-
-
-\heading{Speaking}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{description}
-\squish
-
-\experience{Write the Docs: Europe (Prague, CZ)}
-           {}
-           {08/2015}
-
-    ``How to Write an Email``
-
-\experience{Southern California Linux Expo (SCALE)}
-           {}
-           {02/2015}
-
-    ``Introduction to Blender3D''
-
-\experience{Seattle GNU/Linux Conference}
-           {}
-           {10/2014}
-
-    ``Introduction to Blender3D''
-
-
-\end{description}
 \end{document}
