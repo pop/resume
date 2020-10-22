@@ -15,3 +15,11 @@ To generate and view the PDF, I run `pdflatex resume.tex && evince resume.pdf`. 
 You will need to install the `texlife-core` package to get started, everything else should be self explanatory (or the `make` output will scream at you in some way that hopefully makes sense to you. Google is your friend.)
 
 An older version of this resume was heavily inspired by this document: https://github.com/edunham/resume.
+
+Dependencies
+------------
+
+RHEL Family packages:
+
+* texlive-latex
+* texlive-dvips

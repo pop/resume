@@ -3,8 +3,16 @@ HTML=main_html
 
 default: pdf
 
-pdf:
-	pdflatex resume.tex
+dvi: ${TARGET}.tex 
+	latex ${TARGET}.tex
+
+ps: dvi
+	dvips -R -Poutline -t letter ${TARGET}.dvi -o ${TARGET}.ps
+
+pdf: ps
+	ps2pdf ${TARGET}.ps resume.pdf
+	ps2pdf ${TARGET}.ps "Elijah Caine McDade Voigt resume.pdf"
+	ps2pdf ${TARGET}.ps "Elijah Caine M. Voigt resume.pdf"
 
 clean:
 	rm *.aux
