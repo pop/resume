@@ -1,5 +1,5 @@
 TARGET=resume
-DOCKER=docker run -l debug --workdir /data --rm -it --user="$$(id -u):$$(id -g)" --net=none -v $$PWD:/data:z docker.io/blang/latex:ubuntu
+DOCKER=docker run -l debug --workdir /data --rm -i --user="$$(id -u):$$(id -g)" --net=none -v $$PWD:/data:z docker.io/blang/latex:ubuntu
 
 default: pdf
 
