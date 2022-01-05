@@ -23,5 +23,5 @@ jobs:
         with:
           name: pdfs
           path: |
-            '*.pdf'
+            **.pdf
 
