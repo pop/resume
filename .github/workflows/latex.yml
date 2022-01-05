@@ -15,10 +15,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Github Action for LaTeX
-        uses: xu-cheng/latex-action@v2
+      - name: Build Resume
+        run: make pdf
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v2
         with:
-          root_file: |
-            header.tex
-            resume.tex
+          name: pdfs
+          path: |
+			*.pdf
 
