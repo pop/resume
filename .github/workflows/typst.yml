@@ -17,6 +17,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Install fonts
+        run: |
+          apk -U add ttf-freefont
+
       - name: Build Resume
         run: |
           typst compile resume.typ resume.pdf
