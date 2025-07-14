@@ -13,13 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/typst/typst:latest
-    strategy:
-      matrix:
-        pdf:
-        - resume.pdf
-        - Elijah Caine M. Voigt resume.pdf
-        - Elijah Caine McDade Voigt resume.pdf
-        - Elijah Voigt resume.pdf
 
     steps:
       - uses: actions/checkout@v4
@@ -30,12 +23,16 @@ jobs:
 
       - name: Build Resume
         run: |
-          typst compile resume.typ '${{ matrix.pdf }}'
+          typst compile resume.typ resume.pdf
+          typst compile resume.typ 'Elijah Caine M. Voigt resume.pdf'
+          typst compile resume.typ 'Elijah Caine McDade Voigt resume.pdf'
+          typst compile resume.typ 'Elijah Voigt resume.pdf'
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: '${{ matrix.pdf }}'
-          path: '${{ matrix.pdf }}'
+          name: pdfs
+          path: |
+            *.pdf
 
 
