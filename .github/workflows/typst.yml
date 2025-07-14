@@ -1,0 +1,38 @@
+name: Build and Release
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/typst/typst:latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install fonts
+        run: |
+          apk -U add ttf-freefont
+
+      - name: Build Resume
+        run: |
+          typst compile resume.typ resume.pdf
+          typst compile resume.typ 'Elijah Caine M. Voigt resume.pdf'
+          typst compile resume.typ 'Elijah Caine McDade Voigt resume.pdf'
+          typst compile resume.typ 'Elijah Voigt resume.pdf'
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdfs
+          path: |
+            *.pdf
+
+
