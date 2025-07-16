@@ -63,6 +63,17 @@ text(12pt, description);
   ]
 }
 
+#let title(name, note) = {
+  align(left)[
+    #heading(level: 2)[#name ]
+    #text(
+      size: 12pt,
+      font: "FreeMono",
+      stroke: rgb("#999999"),
+  )[\# #note]
+  ]
+};
+
 ///////////////////////////////
 
 #grid(
@@ -76,10 +87,13 @@ text(12pt, description);
   ]
 )
 
-== \$ whoami
+#title([whoami], [an existential question...])
 
 #align(center)[
-  Career interests in creating and improving #b[Open Source solutions] to common problems, #b[public speaking] on interesting topics, and #b[automating] the boring stuff with #i[security], #i[scalability], and #i[efficiency] in mind.
+  #b[Automating] the boring stuff with #i[security], #i[scalability], and #i[cost] in mind.
+  #b[Developing] full-stack software with Rust.
+  #b[Sharing knowledge] with talks, docs, and writing.
+  #b[Open Sourcing] general purpose and re-usable solutions.
 ]
 
 
@@ -87,37 +101,29 @@ text(12pt, description);
 - #toplevel(
     name: [Server-Side Dev],
     more: [
-      Rust, Golang, Python, Linux (Debian, Ubuntu, RedHat, Fedora, Amazon).
+      Rust (Bevy, Axum, Tokio), Golang, Python, Linux (NixOS, Debian, Ubuntu, RedHat, Amazon).
     ]
   )
 - #toplevel(
-    name: [Open Source],
+    name: [Platform Engineering],
     more: [
-      Publishing general purpose tools, improving existing code-bases, document upstream projects.
-    ]
-  )
-- #toplevel(
-    name: [DevOps],
-    more: [
-      Terraform, Nomad, Packer, Kubernetes, Docker, AWS (IAM, RDS, S3, EC2), Git & GitHub
+      Terraform, Nomad, Packer, Kubernetes, Docker, AWS (IAM, RDS, S3, EC2), git & GitHub.
     ]
   )
 - #toplevel(
     name: [Leadership],
     more: [
-      Technical Lead Manager \@ Lob.com, Linux Users Group \@ Oregon State, SCaLE Conference Speaker.
+      Technical Lead Manager \@ Lob.com, Linux Users Group \@ Oregon State U, Conference Speaker.
     ]
   )
-/*
 - #toplevel(
-    name: [AI Pair Programming],
+    name: [AI Collaboration],
     more: [
-      Collaborating with tools like Claude Code, Cursor, Co-Pilot to improve speed and code quality.
+      Working with tools like Claude Code, Cursor, Co-Pilot to improve dev speed and code quality.
     ]
   )
-*/
 
-== \$ jobs
+#title([jobs], [work i'm doing and have done.])
 
 #set list(marker: [--], indent: 1em)
 #role(
@@ -126,11 +132,12 @@ text(12pt, description);
   title: [Senior Platform Engineer, Technical Lead Manager],
   date: [04/2021 - Present],
   description: [
-      - #xp([Hashicorp Nomad.], [Re-platforming our container orchestration replacing ECS.])
-      - #xp([Maintenance.], [Coordinated maintenance of developer infrastructure including RDS and ElasticSearch.])
-      - #xp([GitHub Actions.], [Creating re-usable workflows to automate build + deploy of in-house services across engineering.])
-      - #xp([Terraform.], [Designing, managing, and provisioning ephemeral, resilient, and reproducible "cattle" infrastructure.])
-      - #xp([Tech debt.], [Deprecated a flaky logging pipeline in favor of DataDog Logs, saving time and money.])
+  - #xp([Cattle Infra.], [Designed, managed, provisioned ephemeral, resilient, and reproducible infrastructure.])
+  - #xp([Observability.], [Migrated our services from a flaky self-hosted ELK stack to managed DataDog Logs.])
+  - #xp([CI/CD.], [Created re-usable GitHub Actions to automate build & deploy for most of our services.])
+  - #xp([Re-Platformed.], [Migrated our services from AWS ECS to Hashicorp Nomad with zero downtime.])
+  - #xp([Cost Management], [Audited and optimized AWS bill with cost savings and reserved instances.])
+  - #xp([Maintenance.], [Ran zero-downtime maintenance of critical infrastructure like RDS and ElasticSearch.])
   ]
 )
 
@@ -140,8 +147,8 @@ text(12pt, description);
   title: [Software Engineer],
   date: [04/2019 - 03/2021],
   description: [
-      - #xp([Python.], [Developed integrations with cloud APIs, managed services, maintained Django code, and CLI tooling.])
-      - #xp([Tooling.], [Maintained and improved internal tooling, CI/CD pipelines, and customer facing software packages.])
+      - #xp([Python.], [Integrated our product with Cloud APIs like AWS, Google Cloud, and Hashicorp Terraform.])
+      - #xp([Tooling.], [Created CI/CD pipelines for internal tooling and customer facing software releases.])
   ]
 )
 
@@ -151,8 +158,8 @@ text(12pt, description);
   title: [Linux DevOps (Engineer 2)],
   date: [03/2017 - 08/2017, 02/2018 - 04/2019],
   description: [
-      - #xp([OS Image Pipeline.], [Lead OS image building pipeline; reduced tech-debt and launched within 3 months of kickoff.])
-      - #xp([DevOps.], [Wrote and maintained Chef cookbooks for Linux software; contributed to Open Source cookbooks])
+      - #xp([DevOps.], [Wrote Chef Cookbooks for business critical Linux and Solaris systems in our data centers.])
+      - #xp([Telemetry tooling.], [Wrote custom software in Go to report Prometheus metrics for legacy systems.])
   ]
 )
 
@@ -162,7 +169,7 @@ text(12pt, description);
   title: [Documentarian],
   date: [09/2016 - 05/2017],
   description: [
-      - #xp([Open Source Docs.], [Reviewed, tested, and contributed to public facing developer focused docs.])
+      - #xp([Migration Docs.], [Reviewed, tested, and contributed to public facing Kubernetes developer docs.])
   ]
 )
 
@@ -172,12 +179,12 @@ text(12pt, description);
   title: [Software Developer],
   date: [05/2014 - 09/2016],
   description: [
-      - #xp([Iteration Cycles++.], [Decreased time-to-deployment by integrating Docker into test/development workflow.])
-      - #xp([Mentorship.], [Taught new developers fundamental "real world" work skills like git and framework usage.])
+      - #xp([Iteration Cycles++.], [Decreased time-to-deploy by integrating Docker into test/development workflow.])
+      - #xp([Mentorship.], [Taught student devs "real world" work skills like #c[git], tracking work, using frameworks.])
   ]
 )
 
-== \$ history
+#title([history], [school and extracurricular activities.])
 
 #role(
   org: [BSCS - Oregon State University],
@@ -185,12 +192,10 @@ text(12pt, description);
   title: [Undergraduate (GPA 3.53)],
   date: [09/2013 - 12/2017],
   description: [
-      - #xp([Major: Computer Science.], [Coursework included Operating Systems I/II, Software Engineering I/II, Defense Against the Dark Arts, Programming Languages, Data Structure, Databases, Web Development and year-long Capstone Project with the Apache Software Foundation.])
-      - #xp([Minor: Mathematics & Security.], [Coursework included Cryptography I, Linear Algebra, Numerical Analysis, Computational Number Theory, and self-guided course on Advanced Topics in Cryptography.])
+      - #xp([Major: Computer Science.], [Curriculum included Operating Systems I/II, Software Engineering I/II, #i[Defense Against the Dark Arts] (#i[ask me about it]), Programming Languages, Data Structure, Databases, Web Development, and a Capstone Project with the Apache Software Foundation.])
+      - #xp([Minor: Math & Security.], [Coursework included Cryptography I, Linear Algebra, Numerical Analysis, Computational Number Theory, and self-guided course on Advanced Topics in Cryptography.])
   ]
 )
-
-== \$ more
 
 #role(
   org: [OSU Linux Users Group],
@@ -198,20 +203,8 @@ text(12pt, description);
   title: [President],
   date: [09/2014 - 09/2017],
   description: [
-      - #xp([Scheduling Speakers.], [Coordinated Industry Professionals and Alumni from IBM, Nordstrom, CoreOS, Mozilla, and Google to speak, recruit, and eat pizza at weekly meetings])
-      - #xp([Weekly Meetings.], [Recruited members to and locals to present on Open Source/Libre Software topics])
+      - #xp([Running the Show.], [Scheduled in-person speakers from IBM, Nordstrom, CoreOS, Mozilla, and Google to present, recruit, and host discussions. Events like Linux Installfest, Flame-War Debates.])
       - #xp([URL.], [#c[https://lug.oregonstate.edu]])
-  ]
-)
-
-#role(
-  org: [Souther Annual Linux Expo],
-  location: [Los Angeles, CA],
-  date: [03/2016],
-  title: [Public Speaker],
-  description: [
-      - #xp([Presented.], ["Crypto: Practical Math", about advanced Cryptography without the usual tedium])
-      - #xp([URL.], [#c[https://youtu.be/ddeV3pESy3Y?t=2h10m4s]])
   ]
 )
 
@@ -221,8 +214,32 @@ text(12pt, description);
   title: [Educator],
   date: [09/2014 - 06/2015],
   description: [
-      - #xp([Lecturer.], [Co-presented weekly topics for students and mentored those who struggled with material])
-      - #xp([Curriculum.], [Improved curriculum based on student feedback and supported online students])
+      - #xp([Lecturer.], [Co-presented weekly lessons, improved cirriculum, mentored students in-person & online.])
       - #xp([URL.], [#c[https://devopsbootcamp.osuosl.org/]])
+  ]
+)
+
+#title([more], [stuff that doesn't fit above.])
+
+#role(
+  org: [Indie Gamedev],
+  location: [Portland, OR],
+  title: [Hobbyist],
+  date: [2019 - Present],
+  description: [
+      - #xp([Programming Games in Rust.], [Using the Bevy Game Engine. Sometimes I even ship them!])
+      - #xp([URL.], [#c[https://games.elijah.run/]])
+  ]
+)
+
+#role(
+  org: [Conference Talks],
+  location: [California/Remote],
+  title: [Public Speaker],
+  description: [
+      - #xp([Replatforming with Minimal Drama and Downtime.], [Lob's migration from ECS to Nomad.])
+          - #xp([Hashitalks 2023.], [#c[https://youtu.be/KSmq524eQuQ]])
+      - #xp([Crypto: Pratical Math.], [Advanced topics in Cryptography, made easily digestible.])
+          - #xp([SCALe, 2016.], [#c[https://youtu.be/ddeV3pESy3Y?t=2h10m4s]])
   ]
 )
