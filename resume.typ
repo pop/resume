@@ -65,7 +65,7 @@ text(12pt, description);
 
 #let title(name, note) = {
   align(left)[
-    #heading(level: 2)[#name ]
+    #heading(level: 2)[\$ #name ]
     #text(
       size: 12pt,
       font: "FreeMono",

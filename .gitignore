@@ -1,5 +1,5 @@
 # nix stuff
-.direnv
+.direnv/
 
 # Build artifacts
 *.pdf
